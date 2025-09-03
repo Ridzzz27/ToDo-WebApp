@@ -1,0 +1,149 @@
+:root {
+  --bg-color: rgba(236, 236, 239, 0.623);
+  --background-color: #f0f0f0;
+  --box-shadow-color: rgba(17, 17, 17, 0.169);
+  --text-color: #222;
+  --input-border: #cdc8c8;
+  --button-bg: #007bffaf;
+  --button-bg-hover: #0057b3be;
+  --task-border: #eee;
+  --task-completed-color: #777;
+  --delete-btn-bg: rgba(255, 0, 0, 0.564);
+  --delete-btn-bg-hover: rgba(139, 0, 0, 0.669);
+}
+
+[data-theme='dark'] {
+  --bg-color: rgba(40, 40, 40, 0.8);
+  --background-color: #222;
+  --box-shadow-color: rgba(0, 0, 0, 0.7);
+  --text-color: #eee;
+  --input-border: #555;
+  --button-bg: #3399ffcc;
+  --button-bg-hover: #1a73e8cc;
+  --task-border: #444;
+  --task-completed-color: #999;
+  --delete-btn-bg: rgba(255, 80, 80, 0.7);
+  --delete-btn-bg-hover: rgba(180, 0, 0, 0.8);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  max-width: 500px;
+  margin: 50px auto;
+  background: var(--bg-color);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--box-shadow-color);
+  color: var(--text-color);
+}
+
+h1 {
+  text-align: center;
+  color: var(--text-color);
+}
+
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 3px solid var(--input-border);
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+button {
+  padding: 3px 10px;
+  border: none;
+  border-radius: 9px;
+  background: var(--button-bg);
+  color: white;
+  cursor: pointer;
+  font-size: 17px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background: var(--button-bg-hover);
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid var(--task-border);
+  color: var(--text-color);
+}
+
+.task-list li.completed span {
+  text-decoration: line-through;
+  color: var(--task-completed-color);
+}
+
+.delete-btn {
+  margin-left: auto;
+  background: var(--delete-btn-bg);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 5px 8px;
+  font-size: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: var(--delete-btn-bg-hover);
+}
+
+
+.toggle-button {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-button .slider {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.toggle-button.dark {
+  background-color: #4a4a4a;
+}
+
+.toggle-button.dark .slider {
+  transform: translateX(30px);
+}
